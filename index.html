@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الجامع لأحكام القرآن — تفسير القرطبي</title>
+<meta name="description" content="تفسير القرطبي كاملاً — تصفح وبحث">
+<meta name="theme-color" content="#241f2e">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <button id="btnBack" class="icon-btn" aria-label="رجوع" hidden>&#8594;</button>
+    <div class="brand" id="brandHome">
+      <span class="brand-mark">﷽</span>
+      <span class="brand-text">
+        <strong>الجامع لأحكام القرآن</strong>
+        <small>تفسير الإمام القرطبي</small>
+      </span>
+    </div>
+    <button id="btnSearch" class="icon-btn" aria-label="بحث">&#128269;</button>
+  </header>
+
+  <!-- HOME VIEW -->
+  <main id="view-home" class="view">
+    <div class="hero">
+      <div class="hero-ornament" aria-hidden="true">
+        <svg viewBox="0 0 200 40" class="rule"><path d="M0 20 H80 M120 20 H200" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="100" cy="20" r="2" fill="currentColor"/></svg>
+      </div>
+      <p class="hero-kicker">١١٤ سورة · ٦٬٢٣٦ آية</p>
+      <p class="hero-desc">الجامع لأحكام القرآن والمبيّن لما تضمّنه من السنّة وآي الفرقان — أبو عبد الله محمد بن أحمد الأنصاري القرطبي (ت ٦٧١هـ)</p>
+    </div>
+    <div class="quickbar">
+      <input id="quickFilter" type="search" placeholder="تصفية السور بالاسم أو الرقم…" autocomplete="off">
+    </div>
+    <ul id="surahList" class="surah-list" aria-label="قائمة السور"></ul>
+  </main>
+
+  <!-- SURAH VIEW -->
+  <main id="view-surah" class="view" hidden>
+    <div class="surah-header">
+      <p class="surah-header-eyebrow" id="surahEyebrow"></p>
+      <h1 id="surahTitle"></h1>
+      <p class="surah-sub" id="surahSub"></p>
+    </div>
+    <div id="ayahJump" class="ayah-jump"></div>
+    <div id="ayahList" class="ayah-list"></div>
+    <div id="surahLoading" class="loading" hidden>...جارٍ التحميل</div>
+  </main>
+
+  <!-- SEARCH VIEW -->
+  <main id="view-search" class="view" hidden>
+    <div class="search-box">
+      <input id="searchInput" type="search" placeholder="ابحث في التفسير… مثال: الوضوء، الطلاق، بسم الله" autocomplete="off">
+      <p class="search-hint" id="searchHint">اكتب كلمة عربية واحدة على الأقل (٣ أحرف فأكثر)</p>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </main>
+
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
